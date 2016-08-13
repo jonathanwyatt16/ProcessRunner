@@ -28,24 +28,23 @@
       /// </summary>
       private void InitializeComponent()
       {
-         this.ProcessRunnerInstaller = new System.ServiceProcess.ServiceProcessInstaller();
-         this.ProcessRunnerServiceInstaller = new System.ServiceProcess.ServiceInstaller();
-         // 
-         // ProcessRunnerInstaller
-         // 
-         this.ProcessRunnerInstaller.Password = null;
-         this.ProcessRunnerInstaller.Username = null;
-         // 
-         // ProcessRunnerServiceInstaller
-         // 
-         this.ProcessRunnerServiceInstaller.Description = "ProcessRunner runs a specified process at varying frequencies throughout the day." +
-             "";
-         this.ProcessRunnerServiceInstaller.DisplayName = "ProcessRunnerService";
-         this.ProcessRunnerServiceInstaller.ServiceName = "ProcessRunnerService";
-         // 
-         // ProjectInstaller
-         // 
-         this.Installers.AddRange(new System.Configuration.Install.Installer[] {
+            this.ProcessRunnerInstaller = new System.ServiceProcess.ServiceProcessInstaller();
+            this.ProcessRunnerServiceInstaller = new System.ServiceProcess.ServiceInstaller();
+            // 
+            // ProcessRunnerInstaller
+            // 
+            this.ProcessRunnerInstaller.Password = null;
+            this.ProcessRunnerInstaller.Username = null;
+            // 
+            // ProcessRunnerServiceInstaller
+            // 
+            this.ProcessRunnerServiceInstaller.Description = "ProcessRunner runs a specified process at varying intervals throughout the day.";
+            this.ProcessRunnerServiceInstaller.DisplayName = "ProcessRunnerService";
+            this.ProcessRunnerServiceInstaller.ServiceName = "ProcessRunnerService";
+            // 
+            // ProjectInstaller
+            // 
+            this.Installers.AddRange(new System.Configuration.Install.Installer[] {
             this.ProcessRunnerInstaller,
             this.ProcessRunnerServiceInstaller});
 

@@ -45,7 +45,7 @@ namespace ProcessRunner
       
       private ServiceStatus _currentStatus;
       private Process _process;
-      private FrequencyRanges _frequencyRanges;
+      private RunIntervals _runIntervals;
       private int _minutesWaited;
 
       protected override void OnStart(string[] aSt)
@@ -83,15 +83,15 @@ namespace ProcessRunner
          _process = new Process();
          _process.StartInfo = processInfo;
 
-         _frequencyRanges = new FrequencyRanges(cfg);
-         _minutesWaited = FrequencyRanges.FIRST_RUN;
+         _runIntervals = new RunIntervals(cfg);
+         _minutesWaited = RunIntervals.FIRST_RUN;
       }
 
       private void runProcessRunnerService()
       {
          while (true)
          {
-            if (_frequencyRanges.runNow(_minutesWaited))
+            if (_runIntervals.runNow(_minutesWaited))
             {
                Log.logLn(String.Format("Running process {0}.", _process.StartInfo.FileName));
                _process.Start();
