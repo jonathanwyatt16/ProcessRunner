@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="FrequencyRange.cs" />
+    <Compile Include="RunIntervals.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="ProcessRunnerService.cs">
       <SubType>Component</SubType>
